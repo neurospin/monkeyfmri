@@ -1,11 +1,11 @@
 =======================================================
-QMRI
+Monkey FMRI
 =======================================================
 
 Documentation
 =============
 
-  Visit QMRI (http://www.???) main page!
+  Visit Monkey FMRI (http://neurospin.github.io/monkeyfmri) main page!
 
 
 
