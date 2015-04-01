@@ -80,6 +80,18 @@ def reorient_image(in_file, axes="RAS", prefix="swap", outdir=None):
 
     >>> from monkeyfmri.utils.reorientation import reorient_image
     >>> rectified_image = reorient_image('image.nii', 'RAS', 's', None)
+
+    <process>
+        <return name="out_file" type="File" desc="the rectified image."/>
+        <input name="in_file" type="File" desc="the input image."/>
+        <input name="axes" type="String" desc="orientation of the original
+            axes X, Y, and Z specified with the following convention:
+            L=Left, R=Right, A=Anterion, P=Posterior, I=Inferior, S=Superior."/>
+        <input name="prefix" type="String" desc="Name prefix
+            prefix of the output image."/>
+        <input name="outdir" type="Directory" desc="the output directory where
+            the rectified image is saved."/>
+    </process>
     """
     # Check the input image exists on the file system
     if not os.path.isfile(in_file):
