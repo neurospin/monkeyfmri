@@ -7,6 +7,3 @@
 # for details.
 ##########################################################################
 
-"""Tools and algorithms to handle monkey FMRI."""
-
-from .info import __version__
