@@ -1,3 +1,4 @@
 [
-    "monkeyfmri.utils.process.ReorientImage"
+    "monkeyfmri.utils.process.ReorientImage",
+    "monkeyfmri.utils.process.SliceRegistration"
 ]

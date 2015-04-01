@@ -12,7 +12,8 @@ from capsul.utils.function_to_process import register_processes
 
 # MONKEYFMRI import
 from .reorientation import reorient_image
+from .registration import slice_registration
 
 
 # Register new processes
-register_processes([reorient_image])
+register_processes([reorient_image, slice_registration])

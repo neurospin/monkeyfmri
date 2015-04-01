@@ -87,8 +87,8 @@ def reorient_image(in_file, axes="RAS", prefix="swap", outdir=None):
         <input name="axes" type="String" desc="orientation of the original
             axes X, Y, and Z specified with the following convention:
             L=Left, R=Right, A=Anterion, P=Posterior, I=Inferior, S=Superior."/>
-        <input name="prefix" type="String" desc="Name prefix
-            prefix of the output image."/>
+        <input name="prefix" type="String" desc="the prefix of the output
+            image."/>
         <input name="outdir" type="Directory" desc="the output directory where
             the rectified image is saved."/>
     </process>
