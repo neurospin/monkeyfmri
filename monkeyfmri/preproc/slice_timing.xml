@@ -34,6 +34,7 @@
             <!-- <force name="output_type" value="NIFTI_GZ"/> -->
             <force name="slice_direction" value="3"/>
             <force name="terminal_output" value="stream"/>
+            <force name="output_directory" value="Undefined"/>
         </standard>
         <switch name="select_slicer">
             <input>fsl</input>

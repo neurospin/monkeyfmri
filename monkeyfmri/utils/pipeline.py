@@ -17,7 +17,8 @@ from capsul.utils.xml_to_pipeline import register_pipelines
 # Locate the files containing the pipeline descriptions
 xmlpipelines = [
     os.path.join(os.path.dirname(__file__), "spm_new_segment.xml"),
-    os.path.join(os.path.dirname(__file__), "spm_smoothing.xml")
+    os.path.join(os.path.dirname(__file__), "spm_smoothing.xml"),
+    os.path.join(os.path.dirname(__file__), "fsl_bet.xml")
 ]
 
 # Register new pipelines
