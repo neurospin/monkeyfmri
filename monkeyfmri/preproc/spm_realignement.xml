@@ -14,9 +14,6 @@
         <standard name="spm_output_adapter_2">
             <module>monkeyfmri.adapters.process.ListToElement</module>
         </standard>
-        <standard name="spm_output_adapter_3">
-            <module>monkeyfmri.adapters.process.ListToElement</module>
-        </standard>
         <standard name="ungzip_adapter">
             <module>monkeyfmri.adapters.process.UngzipFile</module>
             <force name="prefix" value="u"/>
@@ -41,9 +38,8 @@
     <links>
         <!-- ADAPTERS -->
         <link src="ungzip_adapter.ungzipfname" dest="spm_input_adapter.element"/>
-        <link src="spm_realignment._mean_image" dest="spm_output_adapter_1.listobj"/>
-        <link src="spm_realignment._modified_in_files" dest="spm_output_adapter_2.listobj"/>
-        <link src="spm_realignment._realigned_files" dest="spm_output_adapter_3.listobj"/>
+        <link src="spm_realignment._modified_in_files" dest="spm_output_adapter_1.listobj"/>
+        <link src="spm_realignment._realigned_files" dest="spm_output_adapter_2.listobj"/>
         <!-- SPM -->
         <link src="spm_input_adapter.adaptedelement" dest="spm_realignment.in_files"/>
     </links>
@@ -53,16 +49,15 @@
     </inputs>
     <outputs>
         <output name="realignment_parameters" src="spm_realignment._realignment_parameters"/>
-        <output name="reference_mean_file" src="spm_output_adapter_1.element"/>
-        <output name="realigned_fmri_header_modified_file" src="spm_output_adapter_2.element"/>
-        <output name="realigned_fmri_file" src="spm_output_adapter_3.element"/>
+        <output name="reference_mean_file" src="spm_realignment._mean_image"/>
+        <output name="realigned_fmri_header_modified_file" src="spm_output_adapter_1.element"/>
+        <output name="realigned_fmri_file" src="spm_output_adapter_2.element"/>
     </outputs>
     <positions>
         <position process="inputs" x="-545" y="314"/>
         <position process="spm_input_adapter" x="-211" y="-51"/>
-        <position process="spm_output_adapter_1" x="294" y="219"/>
-        <position process="spm_output_adapter_2" x="294" y="408"/>
-        <position process="spm_output_adapter_3" x="293" y="622"/>
+        <position process="spm_output_adapter_1" x="294" y="408"/>
+        <position process="spm_output_adapter_2" x="293" y="622"/>
         <position process="ungzip_adapter" x="-389" y="-125"/>
         <position process="spm_realignment" x="6" y="-101"/>
         <position process="outputs" x="591" y="536"/>

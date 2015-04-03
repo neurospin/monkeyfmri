@@ -44,6 +44,7 @@
         <input name="moving_image" dest="ungzip_adapter_1.fname"/>
         <input name="reference_image" dest="ungzip_adapter_2.fname"/>
         <input name="fwhm" dest="spm_coregistration.fwhm"/>
+        <input name="jobtype" dest="spm_coregistration.jobtype"/>
     </inputs>
     <outputs>
         <output name="coregistered_fmri_file" src="spm_output_adapter.element"/>

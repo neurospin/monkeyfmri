@@ -16,6 +16,7 @@
         </standard>
         <standard name="spm_smoothing">
             <module>nipype.interfaces.spm.Smooth</module>
+            <force name="in_files" copyfile="Temp"/>
             <force name="fwhm" value="[5, 5, 5]"/>
             <force name="data_type" value="0"/>
             <force name="implicit_masking" value="False"/>

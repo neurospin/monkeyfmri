@@ -25,6 +25,7 @@
         </standard>
         <standard name="spm_slice_timing">
             <module>nipype.interfaces.spm.SliceTiming</module>
+            <force name="in_files" copyfile="Temp"/>
             <force name="ref_slice" value="1"/>
             <force name="out_prefix" value="a"/>
             <force name="output_directory" value="Undefined"/>

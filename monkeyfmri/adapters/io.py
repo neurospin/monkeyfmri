@@ -66,7 +66,7 @@ def ungzip_file(fname, prefix="u", output_directory=None):
         output_directory = os.path.dirname(fname)
 
     # Get the file descriptors
-    base, extension = os.path.splitext(input_image)
+    base, extension = os.path.splitext(fname)
     basename = os.path.basename(base)
 
     # Ungzip only known extension
@@ -154,11 +154,11 @@ def spm_tissue_probability_maps():
     tmp_file = get_sample_data("tpm").all
 
     # Format the tpm for spm
-    tissue1 = ((tmp_image, 1), 2, (True, True), (False, True))
-    tissue2 = ((tmp_image, 2), 2, (True, True), (False, True))
-    tissue3 = ((tmp_image, 3), 2, (True, False), (False, False))
-    tissue4 = ((tmp_image, 4), 3, (False, False), (False, False))
-    tissue5 = ((tmp_image, 5), 4, (False, False), (False, False))
+    tissue1 = ((tmp_file, 1), 2, (True, True), (False, True))
+    tissue2 = ((tmp_file, 2), 2, (True, True), (False, True))
+    tissue3 = ((tmp_file, 3), 2, (True, False), (False, False))
+    tissue4 = ((tmp_file, 4), 3, (False, False), (False, False))
+    tissue5 = ((tmp_file, 5), 4, (False, False), (False, False))
 
     return [tissue1, tissue2, tissue3, tissue4, tissue5]
 

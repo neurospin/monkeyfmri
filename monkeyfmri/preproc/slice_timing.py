@@ -36,7 +36,7 @@ def time_serie_metadata(fmri_file, force_repetition_time=None,
     </process>
     """
     # Load the image and get the corresponding header
-    nii = nibabel.load(fmri_image)
+    nii = nibabel.load(fmri_file)
     header = nii.get_header()
 
     # Get image information from header if necessary
@@ -54,7 +54,7 @@ def time_serie_metadata(fmri_file, force_repetition_time=None,
         repetition_time = force_repetition_time
 
     # Get the slice acquisition times
-    if not self.force_slice_times:
+    if not force_slice_orders:
         slice_orders = numpy.round(slice_times / slice_duration).astype(int)
         slice_orders = [index + 1 for index in slice_orders]
     else:
