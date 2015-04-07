@@ -1,0 +1,70 @@
+<pipeline>
+    <docstring>
+        FMRI spatial preprocessings.
+
+        Steps:
+            * Reorientation
+            * Slice registration
+            * Slice timing
+            * Realignement
+            * Coregistration
+            * Normalization
+            * Smoothing
+            * BET
+    </docstring>
+    <processes>
+        <standard name="slicer">
+            <module>monkeyfmri.preproc.pipeline.SliceTiming</module>
+        </standard>
+        <standard name="realign">
+            <module>monkeyfmri.preproc.pipeline.SpmRealignement</module>
+        </standard>
+        <standard name="coregister">
+            <module>monkeyfmri.preproc.pipeline.SpmCoregistration</module>
+        </standard>
+        <standard name="normalize">
+            <module>monkeyfmri.preproc.pipeline.SpmNormalization</module>
+        </standard>
+        <standard name="smoothing">
+            <module>monkeyfmri.utils.pipeline.SpmSmoothing</module>
+        </standard>
+        <standard name="bet">
+            <module>monkeyfmri.utils.pipeline.FslBet</module>
+            <force name="use_4d_input" value="True"/>
+        </standard>
+    </processes>
+    <links>
+        <link src="slicer.time_corrected_fmri_file" dest="realign.fmri_file"/>
+        <link src="realign.reference_mean_file" dest="coregister.reference_image"/>
+        <link src="realign.realigned_fmri_header_modified_file" dest="normalize.fmri_file"/>
+        <link src="coregister.coregistered_fmri_file" dest="normalize.coregistered_struct_file"/>
+        <link src="normalize.normalized_fmri_file" dest="smoothing.image_file"/>
+        <link src="normalize.normalized_fmri_file" dest="bet.input_image_file"/>
+    </links>
+    <inputs>
+        <input name="structural_file" dest="coregister.moving_image"/>
+        <input name="coreg_fwhm" dest="coregister.fwhm"/>
+        <input name="realign_register_to_mean" dest="realign.register_to_mean"/>
+        <input name="norm_struct_voxel_sizes" dest="normalize.struct_voxel_sizes"/>
+        <input name="norm_func_voxel_sizes" dest="normalize.func_voxel_sizes"/>
+        <!-- <input name="smooth_fwhm" dest="smoothing.fwhm"/> -->
+        <input name="bet_generate_binary_mask" dest="bet.generate_binary_mask"/>
+        <input name="bet_generate_skull" dest="bet.generate_skull"/>
+        <input name="bet_generate_mesh" dest="bet.generate_mesh"/>
+        <input name="bet_threshold" dest="bet.bet_threshold"/>
+    </inputs>
+    <outputs>
+        <output name="bet_out_file" src="bet.bet_out_file"/>
+    </outputs>
+    <positions>
+        <position process="inputs" x="-838" y="244"/>
+        <position process="slicer" x="-453" y="227"/>
+        <position process="realign" x="-198" y="489"/>
+        <position process="coregister" x="-164" y="47"/>
+        <position process="normalize" x="-125" y="254"/>
+        <position process="bet" x="148" y="815"/>
+        <position process="smoothing" x="220" y="620"/>
+        <position process="outputs" x="618" y="371"/>
+    </positions>
+    <scale factor="0.4"/> 
+</pipeline>

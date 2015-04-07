@@ -19,7 +19,8 @@ xmlpipelines = [
     os.path.join(os.path.dirname(__file__), "slice_timing.xml"),
     os.path.join(os.path.dirname(__file__), "spm_realignement.xml"),
     os.path.join(os.path.dirname(__file__), "spm_coregistration.xml"),
-    os.path.join(os.path.dirname(__file__), "spm_normalization.xml")
+    os.path.join(os.path.dirname(__file__), "spm_normalization.xml"),
+    os.path.join(os.path.dirname(__file__), "fmri_preproc.xml")
 ]
 
 # Register new pipelines

@@ -265,6 +265,6 @@ def pilot_newsegment():
 
 
 if __name__ == "__main__":
-    #pilot_smoothing()
+    pilot_smoothing()
     #pilot_bet()
-    pilot_newsegment()
+    #pilot_newsegment()

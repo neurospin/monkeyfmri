@@ -33,7 +33,7 @@
     </links>
     <inputs>
         <input name="image_file" dest="ungzip_adapter.fname"/>
-        <!-- <input name="fwhm" dest="spm_smoothing.fwhm"/> -->
+        <input name="fwhm" dest="spm_smoothing.fwhm"/>
     </inputs>
     <outputs>
         <output name="smoothed_image_file" src="spm_output_adapter.element"/>

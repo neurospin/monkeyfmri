@@ -37,7 +37,7 @@
         <link src="spm_newsegment._forward_deformation_field" dest="spm_output_adapter_2.listobj"/>
         <!-- SPM -->
         <link src="spm_input_adapter.adaptedelement" dest="spm_newsegment.channel_files"/>
-        <link src="tpm_adapter.tmp_struct" dest="spm_newsegment.tissues"/>
+        <link src="tpm_adapter.tpm_struct" dest="spm_newsegment.tissues"/>
     </links>
     <inputs>
         <input name="coregistered_struct_file" dest="ungzip_adapter.fname"/>

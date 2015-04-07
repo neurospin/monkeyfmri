@@ -10,5 +10,6 @@
     "monkeyfmri.preproc.pipeline.SliceTiming",
     "monkeyfmri.preproc.pipeline.SpmRealignement",
     "monkeyfmri.preproc.pipeline.SpmCoregistration",
-    "monkeyfmri.preproc.pipeline.SpmNormalization"
+    "monkeyfmri.preproc.pipeline.SpmNormalization",
+    "monkeyfmri.preproc.pipeline.FmriPreproc"
 ]

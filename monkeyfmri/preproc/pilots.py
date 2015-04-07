@@ -358,8 +358,99 @@ def pilot_normalization():
         print("{0}: {1}".format(trait_name, trait_value))
 
 
+@pilotfunction
+def pilot_preproc():
+    """ 
+    FMRI preprocessings
+    ===================
+    """
+    # Pilot imports
+    import os
+    from caps.toy_datasets import get_sample_data
+    from capsul.study_config import StudyConfig
+    from monkeyfmri.preproc.pipeline import FmriPreproc
+
+    """
+    Study configuration
+    -------------------
+
+    We first define the working directory and guarantee this folder exists on
+    the file system:
+    """
+    working_dir = "/volatile/nsap/monkeyfmri/fmripreproc"
+    if not os.path.isdir(working_dir):
+        os.makedirs(working_dir)
+
+    """
+    And then define the study configuration (here we activate the smart
+    caching module that will be able to remember which process has already been
+    processed):
+    """
+    study_config = StudyConfig(
+        modules=["SmartCachingConfig", "MatlabConfig", "SPMConfig", "FSLConfig"],
+        use_smart_caching=True,
+        fsl_config="/etc/fsl/4.1/fsl.sh",
+        use_fsl=True,
+        matlab_exec="/neurospin/local/bin/matlab",
+        use_matlab=True,
+        spm_directory="/i2bm/local/spm8",
+        use_spm=True,
+        output_directory=working_dir)
+
+    """
+    Load the toy dataset
+    --------------------
+
+    To do so, we use the get_sample_data function to download the toy
+    dataset on the local file system (here localizer data):
+    """
+    toy_dataset = get_sample_data("localizer")
+
+    """
+    The toy_dataset is an Enum structure with some specific elements of
+    interest:
+
+        * **??**: ??.
+
+    Processing definition
+    ---------------------
+
+    First create the
+    :ref:`slice timing pipeline <monkeyfmri.preproc.pipeline.SliceTiming>` that
+    define the different step of the processings:
+    """
+    pipeline = FmriPreproc()
+    print pipeline.get_input_spec()
+
+    """
+    Now we need now to parametrize this pipeline:
+    """
+    pipeline.fmri_file = toy_dataset.fmri
+    pipeline.structural_file = toy_dataset.anat
+    pipeline.realign_register_to_mean = True
+    pipeline.select_slicer = "none"
+    pipeline.force_repetition_time = toy_dataset.TR
+    pipeline.force_slice_orders = [index + 1 for index in range(40)]
+
+    """
+    The pipeline is now ready to be run:
+    """
+    study_config.run(pipeline, executer_qc_nodes=True, verbose=1)
+
+    """
+    Results
+    -------
+
+    Finally, we print the pipeline outputs:
+    """
+    print("\nOUTPUTS\n")
+    for trait_name, trait_value in pipeline.get_outputs().items():
+        print("{0}: {1}".format(trait_name, trait_value))
+
+
 if __name__ == "__main__":
     #pilot_slice_timing()
     #pilot_realignement()
     #pilot_coregistration()
-    pilot_normalization()
+    #pilot_normalization()
+    pilot_preproc()

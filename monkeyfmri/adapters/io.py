@@ -142,7 +142,7 @@ def spm_tissue_probability_maps():
     """ SPM tissue probability maps.
 
     <process>
-        <return name="tmp_struct" type="List_Any" desc="a struct containing the
+        <return name="tpm_struct" type="List_Any" desc="a struct containing the
             spm tissue probability map descriptions."/>
     </process>
     """
