@@ -4,7 +4,7 @@
     </docstring>
     <processes>
         <standard name="reorient">
-            <module>monkeyfmri.utils.image_reorientation.reorient_image</module>
+            <module>pclinfmri.utils.image_reorientation.reorient_image</module>
             <force name="prefix" value="swap"/>
             <force name="output_directory" value="Undefined"/>
         </standard>

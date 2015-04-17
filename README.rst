@@ -1,11 +1,11 @@
 =======================================================
-Preclinic FMRI
+Preclinical FMRI
 =======================================================
 
 Documentation
 =============
 
-  Visit Monkey FMRI (http://neurospin.github.io/preclinicfmri) main page!
+  Visit http://neurospin.github.io/preclinical-fmri main page!
 
 
 

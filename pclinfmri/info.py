@@ -40,23 +40,23 @@ NIBABEL_MIN_VERSION = "1.3.0"
 NUMPY_MIN_VERSION = "1.3"
 
 # Main setup parameters
-NAME = "monkeyfmri"
+NAME = "pclinfmri"
 MAINTAINER = "Bechir Jarraya"
 MAINTAINER_EMAIL = "bechir.jarraya@gmail.com"
 DESCRIPTION = description
 LONG_DESCRIPTION = long_description
-URL = "https://github.com/neurospin/monkeyfmri"
+URL = "https://github.com/neurospin/preclinical-fmri"
 DOWNLOAD_URL = ""
 LICENSE = "CeCILL-B"
 CLASSIFIERS = CLASSIFIERS
-AUTHOR = "monkeyfmri developers"
+AUTHOR = "pclinfmri developers"
 AUTHOR_EMAIL = "bechir.jarraya@gmail.com"
 PLATFORMS = "OS Independent"
 MAJOR = _version_major
 MINOR = _version_minor
 MICRO = _version_micro
 VERSION = __version__
-PROVIDES = ["monkeyfmri"]
+PROVIDES = ["pclinfmri"]
 REQUIRES = ["numpy>={0}".format(NUMPY_MIN_VERSION),
             "nibabel>={0}".format(NIBABEL_MIN_VERSION)]
 EXTRA_REQUIRES = {"doc": ["sphinx>=1.0"]}

@@ -4,7 +4,7 @@
     </docstring>
     <processes>
         <standard name="register">
-            <module>monkeyfmri.utils.itk_slice_registration.slice_registration</module>
+            <module>pclinfmri.utils.itk_slice_registration.slice_registration</module>
             <force name="slice_shift" value="5"/>
             <force name="registration_prefix" value="w"/>
             <force name="transformation_prefix" value="w"/>

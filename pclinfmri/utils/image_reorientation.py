@@ -78,7 +78,7 @@ def reorient_image(in_file, axes="RAS", prefix="swap", output_directory=None):
     Examples
     --------
 
-    >>> from monkeyfmri.utils.reorientation import reorient_image
+    >>> from pclinfmri.utils.reorientation import reorient_image
     >>> rectified_image = reorient_image('image.nii', 'RAS', 's', None)
 
     <process>

@@ -25,7 +25,7 @@ def pilot_smoothing():
     import os
     from caps.toy_datasets import get_sample_data
     from capsul.study_config import StudyConfig
-    from monkeyfmri.utils.pipeline import SpmSmoothing
+    from pclinfmri.utils.pipeline import SpmSmoothing
 
     """
     Study configuration
@@ -34,7 +34,7 @@ def pilot_smoothing():
     We first define the working directory and guarantee this folder exists on
     the file system:
     """
-    working_dir = "/volatile/nsap/monkeyfmri/spmsmoothing"
+    working_dir = "/volatile/nsap/pclinfmri/spmsmoothing"
     if not os.path.isdir(working_dir):
         os.makedirs(working_dir)
 
@@ -72,7 +72,7 @@ def pilot_smoothing():
     ---------------------
 
     First create the
-    :ref:`slice timing pipeline <monkeyfmri.preproc.pipeline.SliceTiming>` that
+    :ref:`slice timing pipeline <pclinfmri.preproc.pipeline.SliceTiming>` that
     define the different step of the processings:
     """
     pipeline = SpmSmoothing()
@@ -109,7 +109,7 @@ def pilot_bet():
     import os
     from caps.toy_datasets import get_sample_data
     from capsul.study_config import StudyConfig
-    from monkeyfmri.utils.pipeline import FslBet
+    from pclinfmri.utils.pipeline import FslBet
 
     """
     Study configuration
@@ -118,7 +118,7 @@ def pilot_bet():
     We first define the working directory and guarantee this folder exists on
     the file system:
     """
-    working_dir = "/volatile/nsap/monkeyfmri/fslbet"
+    working_dir = "/volatile/nsap/pclinfmri/fslbet"
     if not os.path.isdir(working_dir):
         os.makedirs(working_dir)
 
@@ -153,7 +153,7 @@ def pilot_bet():
     ---------------------
 
     First create the
-    :ref:`slice timing pipeline <monkeyfmri.preproc.pipeline.SliceTiming>` that
+    :ref:`slice timing pipeline <pclinfmri.preproc.pipeline.SliceTiming>` that
     define the different step of the processings:
     """
     pipeline = FslBet()
@@ -192,7 +192,7 @@ def pilot_newsegment():
     import os
     from caps.toy_datasets import get_sample_data
     from capsul.study_config import StudyConfig
-    from monkeyfmri.utils.pipeline import SpmNewSegment
+    from pclinfmri.utils.pipeline import SpmNewSegment
 
     """
     Study configuration
@@ -201,7 +201,7 @@ def pilot_newsegment():
     We first define the working directory and guarantee this folder exists on
     the file system:
     """
-    working_dir = "/volatile/nsap/monkeyfmri/spmnewsegment"
+    working_dir = "/volatile/nsap/pclinfmri/spmnewsegment"
     if not os.path.isdir(working_dir):
         os.makedirs(working_dir)
 
@@ -239,7 +239,7 @@ def pilot_newsegment():
     ---------------------
 
     First create the
-    :ref:`slice timing pipeline <monkeyfmri.preproc.pipeline.SliceTiming>` that
+    :ref:`slice timing pipeline <pclinfmri.preproc.pipeline.SliceTiming>` that
     define the different step of the processings:
     """
     pipeline = SpmNewSegment()

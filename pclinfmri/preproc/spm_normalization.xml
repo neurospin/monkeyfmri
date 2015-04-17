@@ -4,10 +4,10 @@
     </docstring>
     <processes>
         <standard name="tpm_registration">
-            <module>monkeyfmri.preproc.spm_tpm_registration.xml</module>
+            <module>pclinfmri.preproc.spm_tpm_registration.xml</module>
         </standard>
         <standard name="template_registration">
-            <module>monkeyfmri.preproc.spm_template_registration.xml</module>
+            <module>pclinfmri.preproc.spm_template_registration.xml</module>
         </standard>
         <switch name="select_registration">
             <input>tpm</input>

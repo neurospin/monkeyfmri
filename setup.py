@@ -21,7 +21,7 @@ ext_modules = []
 
 
 release_info = {}
-execfile(os.path.join("monkeyfmri", "info.py"), release_info)
+execfile(os.path.join("pclinfmri", "info.py"), release_info)
 
 
 setup(

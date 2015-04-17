@@ -1,0 +1,23 @@
+[
+    "pclinfmri.utils.image_reorientation.reorient_image",
+    "pclinfmri.utils.itk_slice_registration.slice_registration",
+    "pclinfmri.utils.spm_new_segment.xml",
+    "pclinfmri.utils.spm_smoothing.xml",
+    "pclinfmri.utils.fsl_bet.xml",
+    "pclinfmri.utils.image_reorientation.xml",
+    "pclinfmri.utils.itk_slice_registration.xml",
+    "pclinfmri.adapters.io.element_to_list",
+    "pclinfmri.adapters.io.list_to_element",
+    "pclinfmri.adapters.io.ungzip_file",
+    "pclinfmri.adapters.io.gzip_file",
+    "pclinfmri.adapters.io.spm_tissue_probability_maps",
+    "pclinfmri.preproc.slice_timing.time_serie_metadata",
+    "pclinfmri.preproc.slice_timing.fsl_save_custom_timings",
+    "pclinfmri.preproc.slice_timing.xml",
+    "pclinfmri.preproc.spm_realignement.xml",
+    "pclinfmri.preproc.spm_coregistration.xml",
+    "pclinfmri.preproc.spm_normalization.xml",
+    "pclinfmri.preproc.fmri_preproc.xml",
+    "pclinfmri.preproc.spm_template_registration.xml",
+    "pclinfmri.preproc.spm_tpm_registration.xml"
+]

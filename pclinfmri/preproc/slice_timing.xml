@@ -4,23 +4,23 @@
     </docstring>
     <processes>
         <standard name="image_manager">
-            <module>monkeyfmri.preproc.slice_timing.time_serie_metadata</module>
+            <module>pclinfmri.preproc.slice_timing.time_serie_metadata</module>
             <force name="force_repetition_time" value="-1"/>
             <force name="force_slice_orders" value="[]"/>
         </standard>
         <standard name="spm_input_adapter">
-            <module>monkeyfmri.adapters.io.element_to_list</module>
+            <module>pclinfmri.adapters.io.element_to_list</module>
         </standard>
         <standard name="spm_output_adapter">
-            <module>monkeyfmri.adapters.io.list_to_element</module>
+            <module>pclinfmri.adapters.io.list_to_element</module>
         </standard>
         <standard name="ungzip_adapter">
-            <module>monkeyfmri.adapters.io.ungzip_file</module>
+            <module>pclinfmri.adapters.io.ungzip_file</module>
             <force name="prefix" value="u"/>
             <force name="output_directory" value="Undefined"/>
         </standard>
         <standard name="fsl_save_timings">
-            <module>monkeyfmri.preproc.slice_timing.fsl_save_custom_timings</module>
+            <module>pclinfmri.preproc.slice_timing.fsl_save_custom_timings</module>
             <force name="output_directory" value="Undefined"/>
         </standard>
         <standard name="spm_slice_timing">

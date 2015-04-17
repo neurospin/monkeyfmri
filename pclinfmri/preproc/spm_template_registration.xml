@@ -4,28 +4,28 @@
     </docstring>
     <processes>
         <standard name="ungzip_funcadapter">
-            <module>monkeyfmri.adapters.io.ungzip_file</module>
+            <module>pclinfmri.adapters.io.ungzip_file</module>
             <force name="prefix" value="u"/>
             <force name="output_directory" value="Undefined"/>
         </standard>
         <standard name="ungzip_structadapter">
-            <module>monkeyfmri.adapters.io.ungzip_file</module>
+            <module>pclinfmri.adapters.io.ungzip_file</module>
             <force name="prefix" value="u"/>
             <force name="output_directory" value="Undefined"/>
         </standard>
         <standard name="spm_input_adapter_1">
-            <module>monkeyfmri.adapters.io.element_to_list</module>
+            <module>pclinfmri.adapters.io.element_to_list</module>
         </standard>
         <standard name="spm_output_adapter_1">
-            <module>monkeyfmri.adapters.io.list_to_element</module>
+            <module>pclinfmri.adapters.io.list_to_element</module>
         </standard>
         <standard name="ungzip_templateadapter">
-            <module>monkeyfmri.adapters.io.ungzip_file</module>
+            <module>pclinfmri.adapters.io.ungzip_file</module>
             <force name="prefix" value="u"/>
             <force name="output_directory" value="Undefined"/>
         </standard>       
         <standard name="spm_normalize">
-            <module>monkeyfmri.nipype_interfaces.spm.Normalize</module>
+            <module>pclinfmri.nipype_interfaces.spm.Normalize</module>
             <force name="write_voxel_sizes" value="[1., 1., 1.]"/>
             <force name="bounding_box" value="[[-78, -112, -50], [78, 76, 85]]"/>
             <force name="write_interp" value="1"/>
@@ -35,7 +35,7 @@
             <force name="parameter_file" value="Undefined"/>
         </standard>
         <standard name="spm_funcnormalize">
-            <module>monkeyfmri.nipype_interfaces.spm.Normalize</module>
+            <module>pclinfmri.nipype_interfaces.spm.Normalize</module>
             <force name="write_voxel_sizes" value="[3., 3., 3.]"/>
             <force name="bounding_box" value="[[-78, -112, -50], [78, 76, 85]]"/>
             <force name="write_interp" value="1"/>

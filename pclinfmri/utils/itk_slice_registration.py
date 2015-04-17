@@ -19,7 +19,7 @@ import numpy
 import SimpleITK as sitk
 
 # MONKEYFMRI import
-from monkeyfmri.utils.runtime import progress_bar
+from pclinfmri.utils.runtime import progress_bar
 
 
 def command_iteration(method):
@@ -64,7 +64,7 @@ def slice_registration(in_file, slice_shift=5, registration_prefix="w",
     Example
     -------
 
-    >>> import monkeyfmri.utils.registration import slice_registration
+    >>> import pclinfmri.utils.registration import slice_registration
     >>> reg = slice_registration('image.nii', 5, 'w', 'rp', None, 1)
 
     <process>

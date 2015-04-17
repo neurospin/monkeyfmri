@@ -25,7 +25,7 @@ def pilot_slice_timing():
     import os
     from caps.toy_datasets import get_sample_data
     from capsul.study_config import StudyConfig
-    from monkeyfmri.preproc.pipeline import SliceTiming
+    from pclinfmri.preproc.pipeline import SliceTiming
 
     """
     Study configuration
@@ -34,7 +34,7 @@ def pilot_slice_timing():
     We first define the working directory and guarantee this folder exists on
     the file system:
     """
-    working_dir = "/volatile/nsap/monkeyfmri/spmslicetiming"
+    working_dir = "/volatile/nsap/pclinfmri/spmslicetiming"
     if not os.path.isdir(working_dir):
         os.makedirs(working_dir)
 
@@ -74,7 +74,7 @@ def pilot_slice_timing():
     ---------------------
 
     First create the
-    :ref:`slice timing pipeline <monkeyfmri.preproc.pipeline.SliceTiming>` that
+    :ref:`slice timing pipeline <pclinfmri.preproc.pipeline.SliceTiming>` that
     define the different step of the processings:
     """
     pipeline = SliceTiming()
@@ -114,7 +114,7 @@ def pilot_realignement():
     import os
     from caps.toy_datasets import get_sample_data
     from capsul.study_config import StudyConfig
-    from monkeyfmri.preproc.pipeline import SpmRealignement
+    from pclinfmri.preproc.pipeline import SpmRealignement
 
     """
     Study configuration
@@ -123,7 +123,7 @@ def pilot_realignement():
     We first define the working directory and guarantee this folder exists on
     the file system:
     """
-    working_dir = "/volatile/nsap/monkeyfmri/spmrealignement"
+    working_dir = "/volatile/nsap/pclinfmri/spmrealignement"
     if not os.path.isdir(working_dir):
         os.makedirs(working_dir)
 
@@ -161,7 +161,7 @@ def pilot_realignement():
     ---------------------
 
     First create the
-    :ref:`slice timing pipeline <monkeyfmri.preproc.pipeline.SliceTiming>` that
+    :ref:`slice timing pipeline <pclinfmri.preproc.pipeline.SliceTiming>` that
     define the different step of the processings:
     """
     pipeline = SpmRealignement()
@@ -199,7 +199,7 @@ def pilot_coregistration():
     import os
     from caps.toy_datasets import get_sample_data
     from capsul.study_config import StudyConfig
-    from monkeyfmri.preproc.pipeline import SpmCoregistration
+    from pclinfmri.preproc.pipeline import SpmCoregistration
 
     """
     Study configuration
@@ -208,7 +208,7 @@ def pilot_coregistration():
     We first define the working directory and guarantee this folder exists on
     the file system:
     """
-    working_dir = "/volatile/nsap/monkeyfmri/spmcoregistration"
+    working_dir = "/volatile/nsap/pclinfmri/spmcoregistration"
     if not os.path.isdir(working_dir):
         os.makedirs(working_dir)
 
@@ -246,7 +246,7 @@ def pilot_coregistration():
     ---------------------
 
     First create the
-    :ref:`slice timing pipeline <monkeyfmri.preproc.pipeline.SliceTiming>` that
+    :ref:`slice timing pipeline <pclinfmri.preproc.pipeline.SliceTiming>` that
     define the different step of the processings:
     """
     pipeline = SpmCoregistration()
@@ -286,7 +286,7 @@ def pilot_normalization():
     import os
     from caps.toy_datasets import get_sample_data
     from capsul.study_config import StudyConfig
-    from monkeyfmri.preproc.pipeline import SpmNormalization
+    from pclinfmri.preproc.pipeline import SpmNormalization
 
     """
     Study configuration
@@ -295,7 +295,7 @@ def pilot_normalization():
     We first define the working directory and guarantee this folder exists on
     the file system:
     """
-    working_dir = "/volatile/nsap/monkeyfmri/spmnormalization"
+    working_dir = "/volatile/nsap/pclinfmri/spmnormalization"
     if not os.path.isdir(working_dir):
         os.makedirs(working_dir)
 
@@ -333,7 +333,7 @@ def pilot_normalization():
     ---------------------
 
     First create the
-    :ref:`slice timing pipeline <monkeyfmri.preproc.pipeline.SliceTiming>` that
+    :ref:`slice timing pipeline <pclinfmri.preproc.pipeline.SliceTiming>` that
     define the different step of the processings:
     """
     pipeline = SpmNormalization()
@@ -381,7 +381,7 @@ def pilot_template_registration():
     We first define the working directory and guarantee this folder exists on
     the file system:
     """
-    working_dir = "/volatile/nsap/monkeyfmri/spmtemplateregistration"
+    working_dir = "/volatile/nsap/pclinfmri/spmtemplateregistration"
     if not os.path.isdir(working_dir):
         os.makedirs(working_dir)
 
@@ -420,11 +420,11 @@ def pilot_template_registration():
     ---------------------
 
     First create the
-    :ref:`slice timing pipeline <monkeyfmri.preproc.pipeline.SliceTiming>` that
+    :ref:`slice timing pipeline <pclinfmri.preproc.pipeline.SliceTiming>` that
     define the different step of the processings:
     """
     pipeline = get_process_instance(
-        "monkeyfmri.preproc.pipeline.spm_template_registration.xml")
+        "pclinfmri.preproc.pipeline.spm_template_registration.xml")
     print pipeline.get_input_spec()
 
     """
@@ -469,7 +469,7 @@ def pilot_preproc():
     We first define the working directory and guarantee this folder exists on
     the file system:
     """
-    working_dir = "/volatile/nsap/monkeyfmri/fmripreproc"
+    working_dir = "/volatile/nsap/pclinfmri/fmripreproc"
     if not os.path.isdir(working_dir):
         os.makedirs(working_dir)
 
@@ -510,10 +510,10 @@ def pilot_preproc():
     ---------------------
 
     First create the
-    :ref:`slice timing pipeline <monkeyfmri.preproc.pipeline.SliceTiming>` that
+    :ref:`slice timing pipeline <pclinfmri.preproc.pipeline.SliceTiming>` that
     define the different step of the processings:
     """
-    pipeline = get_process_instance("monkeyfmri.preproc.fmri_preproc.xml")
+    pipeline = get_process_instance("pclinfmri.preproc.fmri_preproc.xml")
     print pipeline.get_input_spec()
 
     """

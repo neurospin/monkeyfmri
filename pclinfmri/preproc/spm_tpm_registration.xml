@@ -8,36 +8,36 @@
     </docstring>
     <processes>
         <standard name="spm_input_adapter_1">
-            <module>monkeyfmri.adapters.io.element_to_list</module>
+            <module>pclinfmri.adapters.io.element_to_list</module>
         </standard>
         <standard name="spm_input_adapter_2">
-            <module>monkeyfmri.adapters.io.element_to_list</module>
+            <module>pclinfmri.adapters.io.element_to_list</module>
         </standard>
         <standard name="spm_output_adapter_1">
-            <module>monkeyfmri.adapters.io.list_to_element</module>
+            <module>pclinfmri.adapters.io.list_to_element</module>
         </standard>
         <standard name="spm_output_adapter_2">
-            <module>monkeyfmri.adapters.io.list_to_element</module>
+            <module>pclinfmri.adapters.io.list_to_element</module>
         </standard>
         <standard name="ungzip_adapter">
-            <module>monkeyfmri.adapters.io.ungzip_file</module>
+            <module>pclinfmri.adapters.io.ungzip_file</module>
             <force name="prefix" value="u"/>
             <force name="output_directory" value="Undefined"/>
         </standard>
         <standard name="spm_newsegment">
-            <module>monkeyfmri.utils.spm_new_segment.xml</module>
+            <module>pclinfmri.utils.spm_new_segment.xml</module>
             <force name="forward_deformation_field" value="Undefined"/>
             <force name="output_directory" value="Undefined"/>
         </standard>
         <standard name="spm_structnormalize">
-            <module>monkeyfmri.nipype_interfaces.spm.ApplyDeformationField</module>
+            <module>pclinfmri.nipype_interfaces.spm.ApplyDeformationField</module>
             <force name="voxel_sizes" value="[1., 1., 1.]"/>
             <force name="bounding_box" value="[[-78, -112, -50], [78, 76, 85]]"/>
             <force name="interpolation" value="1"/>
             <force name="output_directory" value="Undefined"/>
         </standard>
         <standard name="spm_funcnormalize">
-            <module>monkeyfmri.nipype_interfaces.spm.ApplyDeformationField</module>
+            <module>pclinfmri.nipype_interfaces.spm.ApplyDeformationField</module>
             <force name="voxel_sizes" value="[3., 3., 3.]"/>
             <force name="bounding_box" value="[[-78, -112, -50], [78, 76, 85]]"/>
             <force name="interpolation" value="1"/>

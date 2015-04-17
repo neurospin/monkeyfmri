@@ -15,11 +15,11 @@
 import sys
 import os
 
-# Doc generation depends on being able to import monkeyfmri and capsul
+# Doc generation depends on being able to import pclinfmri and capsul
 try:
-    import monkeyfmri
+    import pclinfmri
 except ImportError:
-    raise RuntimeError('Cannot import monkeyfmri, please investigate')
+    raise RuntimeError('Cannot import pclinfmri, please investigate')
 try:
     import capsul
 except ImportError:
@@ -42,7 +42,7 @@ sys.path.insert(
 # We load the release info into a dict by explicit execution
 release_info = {}
 print os.getcwd()
-execfile(os.path.join('..', '..', 'monkeyfmri', 'info.py'), release_info)
+execfile(os.path.join('..', '..', 'pclinfmri', 'info.py'), release_info)
 
 # Add any Sphinx extension module names here, as strings.
 # They can be extensions
@@ -210,7 +210,7 @@ html_show_sourcelink = False
 # html_file_suffix = ''
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'monkeyfmridoc'
+htmlhelp_basename = 'pclinfmridoc'
 
 
 # -- Options for LaTeX output -----------------------------------------------
@@ -225,7 +225,7 @@ htmlhelp_basename = 'monkeyfmridoc'
 # (source start file, target name, title, author, documentclass
 # [howto/manual]).
 latex_documents = [
-    ('index', 'monkeyfmri.tex', u'Monkey FMRI Documentation', u'%(AUTHOR)s' % release_info,
+    ('index', 'pclinfmri.tex', u'Monkey FMRI Documentation', u'%(AUTHOR)s' % release_info,
      'manual'),
 ]
 
