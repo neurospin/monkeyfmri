@@ -31,7 +31,8 @@ def command_iteration(method):
 
 
 def slice_registration(in_file, slice_shift=5, registration_prefix="w",
-                       transformation_prefix="rp", outdir=None, verbose=0):
+                       transformation_prefix="rp", output_directory=None,
+                       verbose=0):
     """ Register slices in an EPI 4D volume.
 
     Compute the meadian image and regsiter the 4d volume image slices
@@ -47,7 +48,7 @@ def slice_registration(in_file, slice_shift=5, registration_prefix="w",
         the prefix of the output registered volume file.
     transformation_prefix: str (optional, default 'rp')
         the prefix of the output parameters file.
-    outdir: str (optional, default None)
+    output_directory: str (optional, default None)
         the output directory where the rectified image is saved.
         If None use the same directory as the input image.
     verbose: int (optional, default 0)
@@ -69,7 +70,7 @@ def slice_registration(in_file, slice_shift=5, registration_prefix="w",
     <process>
         <return name="register_file" type="File" desc="the output temporal
             slice registered volume."/>
-        <return name="transfromation_file" type="File" desc="the computed
+        <return name="transformation_file" type="File" desc="the computed
             slice to slice 2d affine transformation parameters."/>
         <input name="in_file" type="File" desc="the input 4D EPI volume."/>
         <input name="slice_shift" type="Int" desc="slice to exclude
@@ -78,8 +79,8 @@ def slice_registration(in_file, slice_shift=5, registration_prefix="w",
             the output registered volume file."/>
         <input name="transformation_prefix" type="String" desc="the prefix of
             the output parameters file."/>
-        <input name="outdir" type="Directory" desc="the output directory where
-            the rectified image is saved."/>
+        <input name="output_directory" type="Directory" desc="the output
+            directory where the rectified image is saved."/>
     </process>
     """
     # Check the input image exists on the file system
@@ -87,11 +88,12 @@ def slice_registration(in_file, slice_shift=5, registration_prefix="w",
         raise ValueError("'{0}' is not a valid filename.".format(in_file))
 
     # Check that the outdir is valid
-    if outdir is not None:
-        if not os.path.isdir(outdir):
-            raise ValueError("'{0}' is not a valid directory.".format(outdir))
+    if output_directory is not None:
+        if not os.path.isdir(output_directory):
+            raise ValueError("'{0}' is not a valid directory.".format(
+                output_directory))
     else:
-        outdir = os.path.dirname(in_file)
+        output_directory = os.path.dirname(in_file)
 
     # Load the 4d EPI volume and get the associated data
     time_serie_image = nibabel.load(in_file)
@@ -175,8 +177,9 @@ def slice_registration(in_file, slice_shift=5, registration_prefix="w",
 
     # Save the registered image and associated transformations
     fsplit = os.path.split(in_file)
-    register_file = os.path.join(outdir, registration_prefix + fsplit[1])
-    transfromation_file = os.path.join(outdir, transformation_prefix +
+    register_file = os.path.join(output_directory, registration_prefix + 
+                                 fsplit[1])
+    transfromation_file = os.path.join(output_directory, transformation_prefix +
                                        fsplit[1].split(".")[0] + ".json")
     time_serie_image = nibabel.Nifti1Image(
         ts_reg_data, time_serie_image.get_affine())

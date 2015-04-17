@@ -6,16 +6,16 @@
     </docstring>
     <processes>
         <standard name="spm_input_adapter">
-            <module>monkeyfmri.adapters.process.ElementToList</module>
+            <module>monkeyfmri.adapters.io.element_to_list</module>
         </standard>
         <standard name="spm_output_adapter_1">
-            <module>monkeyfmri.adapters.process.ListToElement</module>
+            <module>monkeyfmri.adapters.io.list_to_element</module>
         </standard>
         <standard name="spm_output_adapter_2">
-            <module>monkeyfmri.adapters.process.ListToElement</module>
+            <module>monkeyfmri.adapters.io.list_to_element</module>
         </standard>
         <standard name="ungzip_adapter">
-            <module>monkeyfmri.adapters.process.UngzipFile</module>
+            <module>monkeyfmri.adapters.io.ungzip_file</module>
             <force name="prefix" value="u"/>
             <force name="output_directory" value="Undefined"/>
         </standard>

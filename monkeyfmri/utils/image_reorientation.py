@@ -53,7 +53,7 @@ def swap_affine(axes):
     return rotation
 
 
-def reorient_image(in_file, axes="RAS", prefix="swap", outdir=None):
+def reorient_image(in_file, axes="RAS", prefix="swap", output_directory=None):
     """ Rectify the orientation of an image.
 
     Parameters
@@ -66,7 +66,7 @@ def reorient_image(in_file, axes="RAS", prefix="swap", outdir=None):
         A=Anterion, P=Posterior, I=Inferior, S=Superior.
     prefix: str (optional, default 'swap')
         prefix of the output image.
-    outdir: str (optional, default None)
+    output_directory: str (optional, default None)
         the output directory where the rectified image is saved.
         If None use the same directory as the input image.
 
@@ -89,8 +89,8 @@ def reorient_image(in_file, axes="RAS", prefix="swap", outdir=None):
             L=Left, R=Right, A=Anterion, P=Posterior, I=Inferior, S=Superior."/>
         <input name="prefix" type="String" desc="the prefix of the output
             image."/>
-        <input name="outdir" type="Directory" desc="the output directory where
-            the rectified image is saved."/>
+        <input name="output_directory" type="Directory" desc="the output
+            directory where the rectified image is saved."/>
     </process>
     """
     # Check the input image exists on the file system
@@ -98,11 +98,12 @@ def reorient_image(in_file, axes="RAS", prefix="swap", outdir=None):
         raise ValueError("'{0}' is not a valid filename.".format(in_file))
 
     # Check that the outdir is valid
-    if outdir is not None:
-        if not os.path.isdir(outdir):
-            raise ValueError("'{0}' is not a valid directory.".format(outdir))
+    if output_directory is not None:
+        if not os.path.isdir(output_directory):
+            raise ValueError("'{0}' is not a valid directory.".format(
+                output_directory))
     else:
-        outdir = os.path.dirname(in_file)
+        output_directory = os.path.dirname(in_file)
 
     # Check that a valid input axes is specified
     if axes not in POSSIBLE_AXES_ORIENTATIONS:
@@ -128,7 +129,7 @@ def reorient_image(in_file, axes="RAS", prefix="swap", outdir=None):
 
     # Save the rectified image
     fsplit = os.path.split(in_file)
-    out_file = os.path.join(outdir, prefix + fsplit[1])
+    out_file = os.path.join(output_directory, prefix + fsplit[1])
     nibabel.save(image, out_file)
 
     return out_file

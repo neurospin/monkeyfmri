@@ -44,7 +44,8 @@ def pilot_smoothing():
     processed):
     """
     study_config = StudyConfig(
-        modules=["SmartCachingConfig", "MatlabConfig", "SPMConfig"],
+        modules=["SmartCachingConfig", "MatlabConfig", "SPMConfig",
+                 "NipypeConfig"],
         use_smart_caching=True,
         matlab_exec="/neurospin/local/bin/matlab",
         use_matlab=True,
@@ -127,7 +128,7 @@ def pilot_bet():
     processed):
     """
     study_config = StudyConfig(
-        modules=["SmartCachingConfig", "MatlabConfig", "FSLConfig"],
+        modules=["SmartCachingConfig", "FSLConfig", "NipypeConfig"],
         use_smart_caching=True,
         fsl_config="/etc/fsl/4.1/fsl.sh",
         use_fsl=True,        
@@ -210,7 +211,8 @@ def pilot_newsegment():
     processed):
     """
     study_config = StudyConfig(
-        modules=["SmartCachingConfig", "MatlabConfig", "SPMConfig"],
+        modules=["SmartCachingConfig", "MatlabConfig", "SPMConfig",
+                 "NipypeConfig"],
         use_smart_caching=True,
         matlab_exec="/neurospin/local/bin/matlab",
         use_matlab=True,
@@ -265,6 +267,6 @@ def pilot_newsegment():
 
 
 if __name__ == "__main__":
-    pilot_smoothing()
+    #pilot_smoothing()
     #pilot_bet()
-    #pilot_newsegment()
+    pilot_newsegment()

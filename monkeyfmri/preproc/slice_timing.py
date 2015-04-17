@@ -20,13 +20,13 @@ def time_serie_metadata(fmri_file, force_repetition_time=None,
     software.
 
     <process>
-        <return name="repetition_time" type="Float" optional="True"
+        <return name="repetition_time" type="Float"
             desc="the sequence repetition time."/>
-        <return name="acquisition_time" type="Float" optional="True"
+        <return name="acquisition_time" type="Float"
             desc="the sequence acquisition time."/>
-        <return name="slice_orders" type="List_Int" optional="True"
+        <return name="slice_orders" type="List_Int"
             desc="the sequence slice orders."/>
-        <return name="number_of_slices" type="Int" optional="True"
+        <return name="number_of_slices" type="Int"
             desc="the number of slices in the sequence."/>
         <input name="fmri_file" type="File" desc="the input FMRI image."/>
         <input name="force_repetition_time" type="Float" desc="the sequence

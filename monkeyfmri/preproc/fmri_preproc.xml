@@ -13,27 +13,41 @@
             * BET
     </docstring>
     <processes>
+        <standard name="reorientfunc">
+            <module>monkeyfmri.utils.image_reorientation.xml</module>
+        </standard>
+        <standard name="reorientstruct">
+            <module>monkeyfmri.utils.image_reorientation.xml</module>
+        </standard>
+        <standard name="register">
+            <module>monkeyfmri.utils.itk_slice_registration.xml</module>
+        </standard>
         <standard name="slicer">
-            <module>monkeyfmri.preproc.pipeline.SliceTiming</module>
+            <module>monkeyfmri.preproc.slice_timing.xml</module>
         </standard>
         <standard name="realign">
-            <module>monkeyfmri.preproc.pipeline.SpmRealignement</module>
+            <module>monkeyfmri.preproc.spm_realignement.xml</module>
         </standard>
         <standard name="coregister">
-            <module>monkeyfmri.preproc.pipeline.SpmCoregistration</module>
+            <module>monkeyfmri.preproc.spm_coregistration.xml</module>
         </standard>
         <standard name="normalize">
-            <module>monkeyfmri.preproc.pipeline.SpmNormalization</module>
+            <module>monkeyfmri.preproc.spm_normalization.xml</module>
         </standard>
         <standard name="smoothing">
-            <module>monkeyfmri.utils.pipeline.SpmSmoothing</module>
+            <module>monkeyfmri.utils.spm_smoothing.xml</module>
         </standard>
         <standard name="bet">
-            <module>monkeyfmri.utils.pipeline.FslBet</module>
+            <module>monkeyfmri.utils.fsl_bet.xml</module>
             <force name="use_4d_input" value="True"/>
         </standard>
     </processes>
     <links>
+        <link src="reorientfunc.reoriented_file" dest="register.input_file"/>
+        <link src="reorientstruct.reoriented_file" dest="coregister.moving_image"/>
+        <link src="reorient_axes" dest="reorientstruct.axes"/>
+        <link src="do_reorientation" dest="reorientstruct.do_reorientation"/>
+        <link src="register.registered_file" dest="slicer.fmri_file"/>
         <link src="slicer.time_corrected_fmri_file" dest="realign.fmri_file"/>
         <link src="realign.reference_mean_file" dest="coregister.reference_image"/>
         <link src="realign.realigned_fmri_header_modified_file" dest="normalize.fmri_file"/>
@@ -42,11 +56,15 @@
         <link src="normalize.normalized_fmri_file" dest="bet.input_image_file"/>
     </links>
     <inputs>
-        <input name="structural_file" dest="coregister.moving_image"/>
+        <input name="do_reorientation" dest="reorientfunc.do_reorientation"/>
+        <input name="reorient_axes" dest="reorientfunc.axes"/>
+        <input name="fmri_file" dest="reorientfunc.input_file"/>
+        <input name="structural_file" dest="reorientstruct.input_file"/>
         <input name="coreg_fwhm" dest="coregister.fwhm"/>
         <input name="realign_register_to_mean" dest="realign.register_to_mean"/>
         <input name="norm_struct_voxel_sizes" dest="normalize.struct_voxel_sizes"/>
         <input name="norm_func_voxel_sizes" dest="normalize.func_voxel_sizes"/>
+        <input name="template_file" dest="normalize.template_file"/>
         <!-- <input name="smooth_fwhm" dest="smoothing.fwhm"/> -->
         <input name="bet_generate_binary_mask" dest="bet.generate_binary_mask"/>
         <input name="bet_generate_skull" dest="bet.generate_skull"/>
@@ -57,14 +75,17 @@
         <output name="bet_out_file" src="bet.bet_out_file"/>
     </outputs>
     <positions>
-        <position process="inputs" x="-838" y="244"/>
+        <position process="inputs" x="-1072" y="281"/>
+        <position process="reorientfunc" x="-802" y="35"/>
+        <position process="reorientstruct" x="-456" y="807"/>
+        <position process="register" x="-622" y="85"/>
         <position process="slicer" x="-453" y="227"/>
-        <position process="realign" x="-198" y="489"/>
+        <position process="realign" x="-226" y="575"/>
         <position process="coregister" x="-164" y="47"/>
         <position process="normalize" x="-125" y="254"/>
         <position process="bet" x="148" y="815"/>
         <position process="smoothing" x="220" y="620"/>
         <position process="outputs" x="618" y="371"/>
     </positions>
-    <scale factor="0.4"/> 
+    <scale factor="0.3"/> 
 </pipeline>
