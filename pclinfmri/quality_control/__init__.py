@@ -7,6 +7,4 @@
 # for details.
 ##########################################################################
 
-"""Tools and algorithms to handle functional FMRI."""
-
-from .info import __version__
+"""Tools and algorithms to perform functional quality controls."""

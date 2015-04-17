@@ -19,5 +19,9 @@
     "pclinfmri.preproc.spm_normalization.xml",
     "pclinfmri.preproc.fmri_preproc.xml",
     "pclinfmri.preproc.spm_template_registration.xml",
-    "pclinfmri.preproc.spm_tpm_registration.xml"
+    "pclinfmri.preproc.spm_tpm_registration.xml",
+    "pclinfmri.quality_assurance.fmri_snr_sfnr.snr_percent_fluctuation_and_drift",
+    "pclinfmri.quality_assurance.fmri_spikes.spike_detector",
+    "pclinfmri.quality_assurance.fmri_quality_assurance.xml",
+    "pclinfmri.quality_control.movement_quantity.time_serie_mq"
 ]

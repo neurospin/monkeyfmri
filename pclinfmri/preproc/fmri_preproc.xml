@@ -62,6 +62,8 @@
         <input name="structural_file" dest="reorientstruct.input_file"/>
         <input name="coreg_fwhm" dest="coregister.fwhm"/>
         <input name="realign_register_to_mean" dest="realign.register_to_mean"/>
+        <input name="mvt_thr" dest="realign.mvt_thr"/>
+        <input name="rot_thr" dest="realign.rot_thr"/>
         <input name="norm_struct_voxel_sizes" dest="normalize.struct_voxel_sizes"/>
         <input name="norm_func_voxel_sizes" dest="normalize.func_voxel_sizes"/>
         <input name="template_file" dest="normalize.template_file"/>
@@ -73,6 +75,8 @@
     </inputs>
     <outputs>
         <output name="bet_out_file" src="bet.bet_out_file"/>
+        <output name="qc_snap_mvt" src="realign.snap_mvt"/>
+        <output name="qc_displacement_file" src="realign.displacement_file"/>
     </outputs>
     <positions>
         <position process="inputs" x="-1072" y="281"/>
