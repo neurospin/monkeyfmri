@@ -23,5 +23,7 @@
     "pclinfmri.quality_assurance.fmri_snr_sfnr.snr_percent_fluctuation_and_drift",
     "pclinfmri.quality_assurance.fmri_spikes.spike_detector",
     "pclinfmri.quality_assurance.fmri_quality_assurance.xml",
-    "pclinfmri.quality_control.movement_quantity.time_serie_mq"
+    "pclinfmri.quality_control.movement_quantity.time_serie_mq",
+    "pclinfmri.quality_control.image_overlay.edges_overlay",
+    "pclinfmri.quality_control.spm_overlay.xml"
 ]
