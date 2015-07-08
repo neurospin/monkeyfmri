@@ -25,7 +25,7 @@ def pilot_smoothing():
     import os
     from caps.toy_datasets import get_sample_data
     from capsul.study_config import StudyConfig
-    from pclinfmri.utils.pipeline import SpmSmoothing
+    from capsul.process import get_process_instance
 
     """
     Study configuration
@@ -75,7 +75,7 @@ def pilot_smoothing():
     :ref:`slice timing pipeline <pclinfmri.preproc.pipeline.SliceTiming>` that
     define the different step of the processings:
     """
-    pipeline = SpmSmoothing()
+    pipeline = get_process_instance("pclinfmri.utils.spm_smoothing.xml")
     print pipeline.get_input_spec()
 
     """
@@ -267,6 +267,6 @@ def pilot_newsegment():
 
 
 if __name__ == "__main__":
-    #pilot_smoothing()
+    pilot_smoothing()
     #pilot_bet()
-    pilot_newsegment()
+    #pilot_newsegment()
